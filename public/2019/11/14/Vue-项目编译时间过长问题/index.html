@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/rss2.xml" title="Ada 的个人博客主页" type="application/atom+xml">
 
@@ -81,25 +83,24 @@
 
 
 
-<meta name="description" content="理解JSONP 上 跨域SRJ如果我访问其他网站的服务器，可以吗？由于JSONP可以规避同源策略，因此可以下面我们自己做两个网站尝试一下请求方：ada.com （浏览器）响应方：jack.com （服务器） Linux 或 mac直接1vi /etc/hosts windows需要找到/etc/hosts文件 比较难找，推荐Everything在hosts文件下编辑两个网站打开两个 node 服务">
+<meta name="description" content="随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下： 1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小1234# NPMnpm install --save-dev webpack-bundle-anal">
 <meta name="keywords" content="前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解JSONP 下">
-<meta property="og:url" content="http://adashuai5.com/2018/08/12/理解JSONP-下/index.html">
+<meta property="og:title" content="Vue 项目编译时间过长问题">
+<meta property="og:url" content="http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/index.html">
 <meta property="og:site_name" content="Ada 的个人博客主页">
-<meta property="og:description" content="理解JSONP 上 跨域SRJ如果我访问其他网站的服务器，可以吗？由于JSONP可以规避同源策略，因此可以下面我们自己做两个网站尝试一下请求方：ada.com （浏览器）响应方：jack.com （服务器） Linux 或 mac直接1vi /etc/hosts windows需要找到/etc/hosts文件 比较难找，推荐Everything在hosts文件下编辑两个网站打开两个 node 服务">
+<meta property="og:description" content="随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下： 1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小1234# NPMnpm install --save-dev webpack-bundle-anal">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-19f9953c967705a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-28b643545d3a06f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-3cd83a6dd9b8e522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-455e37f97e889991.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-39446f3e68a37a78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-9442483142643759.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-22T13:45:51.234Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-ab4bc9a1e287601a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-a23b069d62f17087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-db8c24d4609bb95c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-8519d5ef027b6035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7094266-7df2a6d82c804a18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-11-14T15:41:49.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解JSONP 下">
-<meta name="twitter:description" content="理解JSONP 上 跨域SRJ如果我访问其他网站的服务器，可以吗？由于JSONP可以规避同源策略，因此可以下面我们自己做两个网站尝试一下请求方：ada.com （浏览器）响应方：jack.com （服务器） Linux 或 mac直接1vi /etc/hosts windows需要找到/etc/hosts文件 比较难找，推荐Everything在hosts文件下编辑两个网站打开两个 node 服务">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7094266-19f9953c967705a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Vue 项目编译时间过长问题">
+<meta name="twitter:description" content="随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下： 1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小1234# NPMnpm install --save-dev webpack-bundle-anal">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7094266-ab4bc9a1e287601a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://adashuai5.com/2018/08/12/理解JSONP-下/">
+  <link rel="canonical" href="http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/">
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
-  <title>理解JSONP 下 | Ada 的个人博客主页</title>
+  <title>Vue 项目编译时间过长问题 | Ada 的个人博客主页</title>
   
 
 
@@ -242,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://adashuai5.com/2018/08/12/理解JSONP-下/">
+    <link itemprop="mainEntityOfPage" href="http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhou Yuanda">
@@ -259,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">理解JSONP 下</h1>
+          <h1 class="post-title" itemprop="name headline">Vue 项目编译时间过长问题</h1>
         
 
         <div class="post-meta">
@@ -271,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T12:25:05+08:00">
-                2018-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T23:20:51+08:00">
+                2019-11-14
               </time>
             
 
@@ -290,8 +291,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/12/理解JSONP-下/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/12/理解JSONP-下/" itemprop="commentCount"></span>
+                <a href="/2019/11/14/Vue-项目编译时间过长问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/Vue-项目编译时间过长问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -313,7 +314,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  759
+                  552
                 </span>
               
 
@@ -338,23 +339,27 @@
       
 
       
-        <p><a href="https://www.jianshu.com/p/2a2fe02917e7" target="_blank" rel="noopener">理解JSONP 上</a></p>
-<h1 id="跨域SRJ"><a href="#跨域SRJ" class="headerlink" title="跨域SRJ"></a>跨域SRJ</h1><p><strong>如果我访问其他网站的服务器，可以吗？<br>由于JSONP可以规避同源策略，因此可以</strong><br>下面我们自己做两个网站尝试一下<br>请求方：ada.com （浏览器）<br>响应方：jack.com （服务器）</p>
-<p>Linux 或 mac直接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure></p>
-<p>windows需要找到/etc/hosts文件 比较难找，推荐Everything<img src="https://upload-images.jianshu.io/upload_images/7094266-19f9953c967705a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">在hosts文件下编辑两个网站<img src="https://upload-images.jianshu.io/upload_images/7094266-28b643545d3a06f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">打开两个 node 服务器<img src="https://upload-images.jianshu.io/upload_images/7094266-3cd83a6dd9b8e522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>将script.src改成后端服务器的jack.com<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.src = &apos;http://jack.com:8002/pay&apos;</span><br></pre></td></tr></table></figure></p>
-<p>成功在 ada.com里接收到jack.com，ada.com 的前端程序员成功向jack.com 的后端程序员发起请求并得到响应<img src="https://upload-images.jianshu.io/upload_images/7094266-455e37f97e889991.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">跨域SRJ成功</p>
-<h1 id="代码分离："><a href="#代码分离：" class="headerlink" title="代码分离："></a>代码分离：</h1><p><strong>耦合</strong>和<strong>解耦</strong><img src="https://upload-images.jianshu.io/upload_images/7094266-39446f3e68a37a78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">上面的amount.innerText=amount.innerText-1就是前端页面的代码，这说明jack.com 的后端程序元需要对ada.com的页面细节了解的很清楚，这种情况叫做耦合<br>那我们让前后端分离呗，即解耦<br>后端改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//获取参数.call（this，成功）</span><br><span class="line">response.write(`$&#123;query.callbackName&#125;.call(undefined,&apos;success&apos;)`)</span><br></pre></td></tr></table></figure></p>
-<p>前端给参<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//callbackName = 随便</span><br><span class="line">script.src = &apos;http://jack.com:8002/pay?callbackName=yyy&apos;</span><br></pre></td></tr></table></figure></p>
-<h1 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP:"></a>JSONP:</h1><p><img src="https://upload-images.jianshu.io/upload_images/7094266-9442483142643759.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>上面代码高亮的部分就是<a href="https://www.json.org/" target="_blank" rel="noopener">JSON</a>（一个键必须是双引号的对象）<br>JSON左边的代码就是左padding，右边就是右padding，所以JSONP=JSON +Padding</p>
-<h1 id="让我们理一下过程"><a href="#让我们理一下过程" class="headerlink" title="让我们理一下过程"></a>让我们理一下过程</h1><p>请求方：ada.com 的前端程序员（浏览器）<br>响应方：jack.com 的后端程序员（服务器）<br>1.请求方创建 script，src 指向响应方，同时传一个查询参数 ?callbackName=yyy<br>2.响应方根据查询参数callbackName，构造形如<br>yyy.call(undefined, ‘你要的数据’)<br>yyy(‘你要的数据’)<br>这样的响应<br>3.浏览器接收到响应，就会执行 yyy.call(undefined, ‘你要的数据’)<br>4.那么请求方就知道了他要的数据<br>这就是 JSONP<br><strong>约定：</strong><br>callbackName -&gt; callback<br>yyy -&gt; 随机数 如 ada1213123123412()</p>
-<h1 id="JSONP方案"><a href="#JSONP方案" class="headerlink" title="JSONP方案"></a>JSONP方案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(&apos;click&apos;, (e)=&gt;&#123;</span><br><span class="line">    let script = document.createElement(&apos;script&apos;)</span><br><span class="line">    let functionName = &apos;ada&apos;+ parseInt(Math.random()*10000000 ,10)</span><br><span class="line">    window[functionName] = function()&#123;  // 每次请求之前搞出一个随机的函数</span><br><span class="line">        amount.innerText = amount.innerText - 1</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = &apos;http://jack.com:8002/pay?callback=&apos; + functionName</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload = function(e)&#123; // 状态码是 200~299 则表示成功</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = function(e)&#123; // 状态码大于等于 400 则表示失败</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>Node部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (path === &apos;/pay&apos;) &#123;</span><br><span class="line">    var amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;)</span><br><span class="line">    var newAmount = amount - 1</span><br><span class="line">    fs.writeFileSync(&apos;./db&apos;, newAmount)</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;application/javascript&apos;)</span><br><span class="line">    response.write(`$&#123;query.callbackName&#125;.call(undefined,</span><br><span class="line">      &apos;success&apos;`)</span><br><span class="line">    response.end()</span><br></pre></td></tr></table></figure></p>
-<p>jQuery写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">url: &quot;http://jack.com:8002/pay&quot;,</span><br><span class="line">dataType: &quot;jsonp&quot;,</span><br><span class="line">success: function( response ) &#123;</span><br><span class="line">    if(response === &apos;success&apos;)&#123;</span><br><span class="line">    amount.innerText = amount.innerText - 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="JSONP-为什么不支持-POST？"><a href="#JSONP-为什么不支持-POST？" class="headerlink" title="JSONP 为什么不支持 POST？"></a><a href="https://www.zhihu.com/question/28890257" target="_blank" rel="noopener">JSONP 为什么不支持 POST？</a></h1><p>因为  JSONP 是通过<strong>动态创建 Script</strong> 实现的，而<strong>动态创建 Script</strong>只能用GET请求，不能用POST请求</p>
+        <p>随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下：</p>
+<h1 id="1-使用-webpack-bundle-analyzer-分析项目外部依赖大小"><a href="#1-使用-webpack-bundle-analyzer-分析项目外部依赖大小" class="headerlink" title="1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小"></a>1. 使用 <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer" target="_blank" rel="noopener">webpack-bundle-analyzer</a> 分析项目外部依赖大小</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># NPM</span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line"># Yarn</span><br><span class="line">yarn add -D webpack-bundle-analyzer</span><br></pre></td></tr></table></figure>
+<p>使用方法，在 webpack.config.js配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const BundleAnalyzerPlugin = require(&apos;webpack-bundle-analyzer&apos;).BundleAnalyzerPlugin;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    new BundleAnalyzerPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目使用 vue-cli3 搭建，其内置 webpack，因此我们找到 vue.config.js 使用如下代码引入插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    //*//</span><br><span class="line">    config</span><br><span class="line">      .plugin(&apos;webpack-bundle-analyzer&apos;)</span><br><span class="line">      .use(require(&apos;webpack-bundle-analyzer&apos;).BundleAnalyzerPlugin)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时运行 yarn serve 会执行 webpack-bundle-analyzer 插件 BundleAnalyzerPlugin 的默认功能</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7094266-ab4bc9a1e287601a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>serve 完成，会在浏览器自动生成依赖大小分析的可视化网站，如下图所示</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7094266-a23b069d62f17087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="2-使用-webpack-外部扩展-externals"><a href="#2-使用-webpack-外部扩展-externals" class="headerlink" title="2. 使用 webpack 外部扩展(externals)"></a>2. 使用 <a href="https://www.webpackjs.com/configuration/externals/" target="_blank" rel="noopener">webpack 外部扩展(externals)</a></h1><p>防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖</p>
+<h2 id="使用前打包时间"><a href="#使用前打包时间" class="headerlink" title="使用前打包时间"></a>使用前打包时间</h2><p><img src="https://upload-images.jianshu.io/upload_images/7094266-db8c24d4609bb95c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    //*//</span><br><span class="line">    config.externals(&#123;</span><br><span class="line">      &apos;axios&apos;: &apos;axios&apos;,</span><br><span class="line">      &apos;vue&apos;: &apos;Vue&apos;,</span><br><span class="line">      &apos;vue-router&apos;: &apos;VueRouter&apos;,</span><br><span class="line">      &apos;vuex&apos;: &apos;Vuex&apos;,</span><br><span class="line">      &apos;element-ui&apos;: &apos;ELEMENT&apos; // 注意此处要全大写且 Vue.use(ELEMENT)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- public/index.html --&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vuex/3.1.1/vuex.min.js&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/element-ui/2.3.3/index.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>将原来的引用注释</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import Vue from "vue"</span></span><br><span class="line"><span class="comment">// import Element from "element-ui"</span></span><br></pre></td></tr></table></figure>
+<p>再次使用 webpack-bundle-analyzer 可以看到依赖的体积减少了近 10 M</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7094266-8519d5ef027b6035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="使用后打包时间"><a href="#使用后打包时间" class="headerlink" title="使用后打包时间"></a>使用后打包时间</h2><p>再次打包，打包时间缩短了近一倍 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7094266-7df2a6d82c804a18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>未完待续。。。</p>
 <hr>
-<p>本文主要用于个人学习使用</p>
+<p>参考<br> <a href="https://juejin.im/post/5d7266495188256f3b09baea" target="_blank" rel="noopener">vue-cli3 使用 webpack-bundle-analyzer 插件</a>;<br><a href="https://www.jianshu.com/p/b2fe6aebe691" target="_blank" rel="noopener">解决vue打包wendor过大的问题</a></p>
 
       
     </div>
@@ -375,7 +380,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://adashuai5.com/2018/08/12/理解JSONP-下/" title="理解JSONP 下">http://adashuai5.com/2018/08/12/理解JSONP-下/</a>
+    <a href="http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/" title="Vue 项目编译时间过长问题">http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -397,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/11/Web-服务器/" rel="next" title="Web 服务器">
-                <i class="fa fa-chevron-left"></i> Web 服务器
+              <a href="/2019/06/12/Flutter-踩坑之环境搭建/" rel="next" title="Flutter 踩坑之环境搭建">
+                <i class="fa fa-chevron-left"></i> Flutter 踩坑之环境搭建
               </a>
             
           </div>
@@ -406,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/12/实现一个AJAX/" rel="prev" title="实现一个AJAX">
-                实现一个AJAX <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域SRJ"><span class="nav-number">1.</span> <span class="nav-text">跨域SRJ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码分离："><span class="nav-number">2.</span> <span class="nav-text">代码分离：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP"><span class="nav-number">3.</span> <span class="nav-text">JSONP:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#让我们理一下过程"><span class="nav-number">4.</span> <span class="nav-text">让我们理一下过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP方案"><span class="nav-number">5.</span> <span class="nav-text">JSONP方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP-为什么不支持-POST？"><span class="nav-number">6.</span> <span class="nav-text">JSONP 为什么不支持 POST？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-使用-webpack-bundle-analyzer-分析项目外部依赖大小"><span class="nav-number">1.</span> <span class="nav-text">1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-使用-webpack-外部扩展-externals"><span class="nav-number">2.</span> <span class="nav-text">2. 使用 webpack 外部扩展(externals)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用前打包时间"><span class="nav-number">2.1.</span> <span class="nav-text">使用前打包时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用后打包时间"><span class="nav-number">2.2.</span> <span class="nav-text">使用后打包时间</span></a></li></ol></li></ol></div>
             
 
           </div>
