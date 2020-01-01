@@ -1841,7 +1841,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #18ff1a;
+  background: #cd42ad;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2681,10 +2681,10 @@ embed {
 }
 @media screen and (min-width: 200px) {
   body {
-    background-image: url("/images/background.jpg");
     background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background: radial-gradient(#fff, #fcf5ed, #e4d9c5);
     background-attachment: fixed;
-    background-position: 50% 50%;
   }
   #footer a {
     color: #ddd;
