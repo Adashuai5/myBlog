@@ -1,8 +1,9 @@
 ---
 title: LeetCode 算法之旅
 date: 2019-03-28 22:19:06
-tags:
+tags: 算法
 ---
+
 算法是每个程序员应该重视的技能之一，即使是对算法要求不那么高的前端。但是如果能够不时抽空练习，对逻辑与能力的提升一定会有极大帮助。
 于是，作为前端新人的我，注册了大名鼎鼎的 LeetCode，开始练习之旅。本文记录每道题目的记录，便于不时查阅及更新。
 
@@ -22,7 +23,9 @@ var twoSum = function (nums, target) {
 }
 // 164 ms
 ```
+
 ## [26\. 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+
 ```
 /**
  * @param {number[]} nums

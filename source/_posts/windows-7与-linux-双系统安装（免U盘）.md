@@ -1,29 +1,30 @@
 ---
 title: windows 7与 linux 双系统安装（免U盘）
 date: 2018-06-03 22:30:14
-tags:
+tags: linux
 ---
-之前一直看到linux系统的安利，决定在原windows 7系统下装个linux系统来学习。网上找了大量教程，遇到了各种各样的问题，花费了很长时间，终于成功。由于身边没有U盘，选择了免U盘安装的便捷方法。本次选择的linux系统版本为使用量最多的ubuntu。下面分享安装的过程中的问题及解决方法。
+
+之前一直看到 linux 系统的安利，决定在原 windows 7 系统下装个 linux 系统来学习。网上找了大量教程，遇到了各种各样的问题，花费了很长时间，终于成功。由于身边没有 U 盘，选择了免 U 盘安装的便捷方法。本次选择的 linux 系统版本为使用量最多的 ubuntu。下面分享安装的过程中的问题及解决方法。
 
 **系统环境：**
 
-windows 7（win10相同）
+windows 7（win10 相同）
 
 **准备工具：**
 
-1.EasyBCD，一款用来配置与调整启动配置数据的软件，本次我使用的是2.3版本。
+1.EasyBCD，一款用来配置与调整启动配置数据的软件，本次我使用的是 2.3 版本。
 
-2.Ubuntu 系统，[官网下载](https://link.zhihu.com/?target=https%3A//cn.ubuntu.com/download/)，选择自己喜欢的版本，本次我选用的是Ubuntu 17.04版本。
+2.Ubuntu 系统，[官网下载](https://link.zhihu.com/?target=https%3A//cn.ubuntu.com/download/)，选择自己喜欢的版本，本次我选用的是 Ubuntu 17.04 版本。
 
-**windows分区：**
+**windows 分区：**
 
-从windows 系统磁盘中分出40-100G空间作为linux系统存储空间
+从 windows 系统磁盘中分出 40-100G 空间作为 linux 系统存储空间
 
 1.桌面右键我的电脑，点击管理->磁盘管理
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-08c675192441c530.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-2.选择一个可用空间多的盘，右击选 压缩卷。压缩相应大小空间，本次我选用的是80G，即81920（可自行按实际情况选择40-100G）
+2.选择一个可用空间多的盘，右击选 压缩卷。压缩相应大小空间，本次我选用的是 80G，即 81920（可自行按实际情况选择 40-100G）
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-1e878e73901c0b1b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -35,19 +36,19 @@ windows 7（win10相同）
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-45a5f96809ab9018.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-主分区和逻辑分区已满情况：磁盘主分区加上逻辑分区（绿色框区域）超过4个区，就会出现这种情况。（想了解可看[遇到此情况原因](https://link.zhihu.com/?target=https%3A//blog.csdn.net/qiushisoftware/article/details/19337945)）
+主分区和逻辑分区已满情况：磁盘主分区加上逻辑分区（绿色框区域）超过 4 个区，就会出现这种情况。（想了解可看[遇到此情况原因](https://link.zhihu.com/?target=https%3A//blog.csdn.net/qiushisoftware/article/details/19337945)）
 
-由于我原本的逻辑分区空间不足，我选择的办法是将某个主分区转换成逻辑分区，这样就相当于将磁盘转化到3.的盘的状态，即主分区和逻辑分区不超过4个。用到的软件是DiskGenius [下载地址](https://link.zhihu.com/?target=http%3A//www.diskgenius.cn/download.php)
+由于我原本的逻辑分区空间不足，我选择的办法是将某个主分区转换成逻辑分区，这样就相当于将磁盘转化到 3.的盘的状态，即主分区和逻辑分区不超过 4 个。用到的软件是 DiskGenius [下载地址](https://link.zhihu.com/?target=http%3A//www.diskgenius.cn/download.php)
 
 选中原来想分区的主分区盘 右击->转化为逻辑分区即可
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-09adb29a2c6cc10d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-然后重复步骤3就能成功
+然后重复步骤 3 就能成功
 
 **Ubuntu：**
 
-将下载好的Ubuntu iOS镜像文件放到电脑某个盘根目录下，本次我选择的是F盘，然后解压到当前目录下（选个文件少的盘，安装完成后这些解压文件和镜像都没用了，文件多的话删除的时候比较蛋疼，好在解压下来的文件一般有相同的修改日期，可作为删除参考依据）。保证解压后的这些文件和Ubuntu iOS镜像文件在同一个盘的根目录下，要不然安装过程中可能出现找不到系统文件的情况。
+将下载好的 Ubuntu iOS 镜像文件放到电脑某个盘根目录下，本次我选择的是 F 盘，然后解压到当前目录下（选个文件少的盘，安装完成后这些解压文件和镜像都没用了，文件多的话删除的时候比较蛋疼，好在解压下来的文件一般有相同的修改日期，可作为删除参考依据）。保证解压后的这些文件和 Ubuntu iOS 镜像文件在同一个盘的根目录下，要不然安装过程中可能出现找不到系统文件的情况。
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-0d9f66878975eea7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -55,17 +56,17 @@ windows 7（win10相同）
 
 **EasyBCD：**
 
-打开EasyBCD，选择添加新条目。在下半部分框里点击ISO项，名称随便填，路径选择你的ubuntu ISO镜像所在的地方。模式从磁盘运行。选完后，添加条目
+打开 EasyBCD，选择添加新条目。在下半部分框里点击 ISO 项，名称随便填，路径选择你的 ubuntu ISO 镜像所在的地方。模式从磁盘运行。选完后，添加条目
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-fc7fd3391c25169b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-然后点击编辑引导菜单，就可以看到刚才添加的条目了。选择倒计时，如果Use Metro bootloader没有勾选上，勾选下。完成后保存设置。
+然后点击编辑引导菜单，就可以看到刚才添加的条目了。选择倒计时，如果 Use Metro bootloader 没有勾选上，勾选下。完成后保存设置。
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-16069c81c35d9de9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-**进入Ubuntu安装：**
+**进入 Ubuntu 安装：**
 
-主要安装过程我参考了[_牙牙](https://link.zhihu.com/?target=https%3A//www.jianshu.com/u/563525e5cc40)的简书 [地址](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/417c1001a559) 所给方法进行（由于图片无法截取，只能贴其博客了，大家可以按其博客从“4.关机重启，会出现两个选项，选Ubuntu iOS，单击进入安装引导过程“开始）
+主要安装过程我参考了[\_牙牙](https://link.zhihu.com/?target=https%3A//www.jianshu.com/u/563525e5cc40)的简书  [地址](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/417c1001a559)  所给方法进行（由于图片无法截取，只能贴其博客了，大家可以按其博客从“4.关机重启，会出现两个选项，选 Ubuntu iOS，单击进入安装引导过程“开始）
 
 当我进行到这一步时候
 
@@ -77,19 +78,18 @@ windows 7（win10相同）
 
 ![image](https://upload-images.jianshu.io/upload_images/7094266-7e0728cbb8a2de16.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-进入后按快捷键ctrl+alt+T进入终端
+进入后按快捷键 ctrl+alt+T 进入终端
 
-输入sudo umount -l /cdrom 回车即可继续进行安装Ubuntu（‘-l’中‘l’是小写的L）
+输入 sudo umount -l /cdrom 回车即可继续进行安装 Ubuntu（‘-l’中‘l’是小写的 L）
 
-若还是未安装成功，多尝试几遍，有与上述不一致的问题多google，每个电脑情况不同，但是遇到问题基本上前人都解决过了，一定能有效解决。（ **Ctrl+Alt+Del**可以立即终结电脑的异常状态，因此安装未成功可用此快捷键快速重启）
+若还是未安装成功，多尝试几遍，有与上述不一致的问题多 google，每个电脑情况不同，但是遇到问题基本上前人都解决过了，一定能有效解决。（ **Ctrl+Alt+Del**可以立即终结电脑的异常状态，因此安装未成功可用此快捷键快速重启）
 
-相信你一定能愉快得开始玩耍linux系统的。
+相信你一定能愉快得开始玩耍 linux 系统的。
 
 本文主要用于个人学习使用，如有侵权请联系我删除。
 
 **主要参考博客：**
 
-[win10下装ubuntu双系统（免U盘）](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/417c1001a559)
+[win10 下装 ubuntu 双系统（免 U 盘）](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/417c1001a559)
 
 其他参考链接已在文中注明。
-
