@@ -205,7 +205,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// 1. 构建虚拟DOM</span><br><span class="line">let vNode = v(&apos;div&apos;, [</span><br><span class="line">    v(&apos;p&apos;, [</span><br><span class="line">        v(&apos;span&apos;, [v(&apos;#text&apos;, &apos;Ada&apos;)])</span><br><span class="line">    ]),</span><br><span class="line">    v(&apos;span&apos;, [v(&apos;#text&apos;, &apos;shuai&apos;)])</span><br><span class="line">])</span><br><span class="line">// 3. 生成新的虚拟DOM</span><br><span class="line">let vNode1 = v(&apos;div&apos;, [</span><br><span class="line">    v(&apos;p&apos;, [</span><br><span class="line">        v(&apos;span&apos;, [v(&apos;#text&apos;, &apos;Ada&apos;)])</span><br><span class="line">    ]),</span><br><span class="line">    v(&apos;span&apos;, [v(&apos;#text&apos;, &apos;shuai&apos;)]),</span><br><span class="line">    v(&apos;p&apos;, [v(&apos;#text&apos;, &apos;upload&apos;)])</span><br><span class="line">])</span><br><span class="line">// 2. 通过虚拟DOM构建真正的DOM</span><br><span class="line">const root = document.querySelector(&apos;#root&apos;)</span><br><span class="line">patchElement(root, vNode)</span><br><span class="line">var n = 0</span><br><span class="line">// 4. 比较两次虚拟DOM树的不同，在真正的DOM元素上应用变更</span><br><span class="line">document.querySelector(&apos;.btn&apos;).onclick = function () &#123;</span><br><span class="line">    if (n % 2 == 0) &#123;</span><br><span class="line">        patchElement(root, vNode1, vNode)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        patchElement(root, vNode, vNode1)</span><br><span class="line">    &#125;</span><br><span class="line">    n += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>本文仅供个人学习使用</p>
 <hr>
-<p>主要参考：<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="noopener">深度剖析：如何实现一个 Virtual DOM 算法</a></p>
+<p>主要参考：<a href="https://github.com/livoras/blog/issues/13">深度剖析：如何实现一个 Virtual DOM 算法</a></p>
 
         </div>
 
@@ -220,7 +220,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://adashuai5.com/2018/09/27/理解虚拟-DOM/">http://adashuai5.com/2018/09/27/理解虚拟-DOM/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/09/27/理解虚拟-DOM/">https://github.com/Adashuai5/Adashuai5.github.io/2018/09/27/理解虚拟-DOM/</a></span>
                     </p>
                 
                 

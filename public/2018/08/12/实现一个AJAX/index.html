@@ -225,7 +225,7 @@
 <p>then 后再 then</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.then(</span><br><span class="line">    //成功后执行的代码</span><br><span class="line">    (responseText)=&gt;&#123;console.log(responseText);return &apos;处理成功&apos;&#125;,</span><br><span class="line">    //失败后执行的代码</span><br><span class="line">    (request)=&gt;&#123;console.log(request);return &apos;处理失败&apos;&#125;</span><br><span class="line">    ).then(</span><br><span class="line">    //上一次成功后的return</span><br><span class="line">    (responseText)=&gt;&#123;console.log(responseText)&#125;,</span><br><span class="line">    //上一次失败后的return</span><br><span class="line">    (request)=&gt;&#123;console.log(request)&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>可以看下结果<img src="https://upload-images.jianshu.io/upload_images/7094266-46960dc591ffab15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>完整代码请看 <a href="https://github.com/Adashuai5/node-demo/tree/master/jQuery.AJAX" target="_blank" rel="noopener">github</a></p>
+<p>完整代码请看 <a href="https://github.com/Adashuai5/node-demo/tree/master/jQuery.AJAX">github</a></p>
 <hr>
 <p>#小记<br><strong>AJAX 的所有功能</strong><br>客户端的 JS 发起请求（浏览器上的）<br>服务端的 JS 发送响应（Node.js 上的）<br><strong>1.JS 可以设置任意请求 header</strong><br>第一部分 request.open(method, url)<br>第二部分 request.setRequstHeader(‘content-type’,’application/x-www-form-urlencoded’)<br>第四部分 request.send(body)<br><strong>2.JS 可以获取任意响应 header</strong><br>第一部分 request.status / request.statusText<br>第二部分 request.getResponseHeader() / request.getAllResponseHeaders()<br>第四部分 request.responseText<br>图解<img src="https://upload-images.jianshu.io/upload_images/7094266-82d62fca23713ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>有关回调 (callback:打电话回来)：</strong></p>
@@ -249,7 +249,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://adashuai5.com/2018/08/12/实现一个AJAX/">http://adashuai5.com/2018/08/12/实现一个AJAX/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/08/12/实现一个AJAX/">https://github.com/Adashuai5/Adashuai5.github.io/2018/08/12/实现一个AJAX/</a></span>
                     </p>
                 
                 

@@ -193,7 +193,7 @@
 
         <div class="post-content">
             <p>随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下：</p>
-<h1 id="1-使用-webpack-bundle-analyzer-分析项目外部依赖大小"><a href="#1-使用-webpack-bundle-analyzer-分析项目外部依赖大小" class="headerlink" title="1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小"></a>1. 使用 <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer" target="_blank" rel="noopener">webpack-bundle-analyzer</a> 分析项目外部依赖大小</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># NPM</span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line"># Yarn</span><br><span class="line">yarn add -D webpack-bundle-analyzer</span><br></pre></td></tr></table></figure>
+<h1 id="1-使用-webpack-bundle-analyzer-分析项目外部依赖大小"><a href="#1-使用-webpack-bundle-analyzer-分析项目外部依赖大小" class="headerlink" title="1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小"></a>1. 使用 <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer">webpack-bundle-analyzer</a> 分析项目外部依赖大小</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># NPM</span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line"># Yarn</span><br><span class="line">yarn add -D webpack-bundle-analyzer</span><br></pre></td></tr></table></figure>
 <p>官网显示的使用方法，需要在 webpack.config.js 内配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const BundleAnalyzerPlugin = require(&apos;webpack-bundle-analyzer&apos;).BundleAnalyzerPlugin;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    new BundleAnalyzerPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>而我们的项目是使用 vue-cli3 搭建，其内置 webpack （也就是没有 webpack.config.js），因此我们找到 vue.config.js 使用如下代码引入插件：</p>
@@ -233,7 +233,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/">http://adashuai5.com/2019/11/14/Vue-项目编译时间过长问题/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-项目编译时间过长问题/">https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-项目编译时间过长问题/</a></span>
                     </p>
                 
                 
