@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="author" content="Zhou Yuanda">
@@ -48,7 +49,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -240,7 +241,8 @@
 <p>如：<strong>curl -s -v -H  – “<a href="https://www.baidu.com&quot;" target="_blank" rel="noopener">https://www.baidu.com&quot;</a></strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-fb73225d2f20d079.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>请求的内容为</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line"></span><br><span class="line">&gt; Host: www.baidu.com</span><br><span class="line"></span><br><span class="line">&gt; User-Agent: curl/7.59.0</span><br><span class="line"></span><br><span class="line">&gt; Accept: */*</span><br><span class="line"></span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">**响应的内容为**</span><br><span class="line"></span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line"></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line"></span><br><span class="line">&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform</span><br><span class="line"></span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line"></span><br><span class="line">&lt; Content-Length: 2443</span><br><span class="line"></span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line"></span><br><span class="line">&lt; Date: Thu, 07 Jun 2018 13:54:43 GMT</span><br><span class="line"></span><br><span class="line">&lt; Etag: &quot;58860411-98b&quot;</span><br><span class="line"></span><br><span class="line">&lt; Last-Modified: Mon, 23 Jan 2017 13:24:33 GMT</span><br><span class="line"></span><br><span class="line">&lt; Pragma: no-cache</span><br><span class="line"></span><br><span class="line">* Server bfe/1.0.8.18 is not blacklisted</span><br><span class="line"></span><br><span class="line">&lt; Server: bfe/1.0.8.18</span><br><span class="line"></span><br><span class="line">&lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/</span><br><span class="line"></span><br><span class="line">&lt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&gt; GET &#x2F; HTTP&#x2F;1.1</span><br><span class="line"></span><br><span class="line">&gt; Host: www.baidu.com</span><br><span class="line"></span><br><span class="line">&gt; User-Agent: curl&#x2F;7.59.0</span><br><span class="line"></span><br><span class="line">&gt; Accept: *&#x2F;*</span><br><span class="line"></span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">**响应的内容为**</span><br><span class="line"></span><br><span class="line">&lt; HTTP&#x2F;1.1 200 OK</span><br><span class="line"></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line"></span><br><span class="line">&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform</span><br><span class="line"></span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line"></span><br><span class="line">&lt; Content-Length: 2443</span><br><span class="line"></span><br><span class="line">&lt; Content-Type: text&#x2F;html</span><br><span class="line"></span><br><span class="line">&lt; Date: Thu, 07 Jun 2018 13:54:43 GMT</span><br><span class="line"></span><br><span class="line">&lt; Etag: &quot;58860411-98b&quot;</span><br><span class="line"></span><br><span class="line">&lt; Last-Modified: Mon, 23 Jan 2017 13:24:33 GMT</span><br><span class="line"></span><br><span class="line">&lt; Pragma: no-cache</span><br><span class="line"></span><br><span class="line">* Server bfe&#x2F;1.0.8.18 is not blacklisted</span><br><span class="line"></span><br><span class="line">&lt; Server: bfe&#x2F;1.0.8.18</span><br><span class="line"></span><br><span class="line">&lt; Set-Cookie: BDORZ&#x3D;27315; max-age&#x3D;86400; domain&#x3D;.baidu.com; path&#x3D;&#x2F;</span><br><span class="line"></span><br><span class="line">&lt;</span><br></pre></td></tr></table></figure>
+
 <p>还有很多可以尝试的 <strong>curl</strong> 命令</p>
 <p>可以参考 <a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">链接</a></p>
 <hr>
@@ -262,13 +264,13 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/06/07/理解HTTP/">https://github.com/Adashuai5/Adashuai5.github.io/2018/06/07/理解HTTP/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/06/07/%E7%90%86%E8%A7%A3HTTP/">https://github.com/Adashuai5/Adashuai5.github.io/2018/06/07/%E7%90%86%E8%A7%A3HTTP/</a></span>
                     </p>
                 
                 
                     <p class="copyright-item">
                         <span>License:</span>
-                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
                     </p>
                 
                 
@@ -299,10 +301,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2018/06/08/有关-HTTP-协议（IP和端口）/">有关 HTTP 协议（IP 和端口）</a>
+                <a class="prev" rel="prev" href="/2018/06/08/%E6%9C%89%E5%85%B3-HTTP-%E5%8D%8F%E8%AE%AE%EF%BC%88IP%E5%92%8C%E7%AB%AF%E5%8F%A3%EF%BC%89/">有关 HTTP 协议（IP 和端口）</a>
             
             
-            <a class="next" rel="next" href="/2018/06/05/git入门——在本地使用git/">git 入门——在本地使用 git</a>
+            <a class="next" rel="next" href="/2018/06/05/git%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9C%A8%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8git/">git 入门——在本地使用 git</a>
             
         </section>
 

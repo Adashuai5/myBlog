@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="author" content="Zhou Yuanda">
@@ -48,7 +49,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -214,10 +215,12 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-8fa1e7aee94ca4f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>现在，只要你给一个 node 和 classes 于此函数，就可以给 该节点添加 classes 所包含的正确属性</p>
 <h1 id="命名空间："><a href="#命名空间：" class="headerlink" title="命名空间："></a><strong>命名空间：</strong></h1><p><strong>给封装的函数一个名字，方便其他人使用，同时防止与前人命名的冲突。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var Adadom = &#123;&#125;</span><br><span class="line">Adadom.getSiblings(node)</span><br><span class="line">Adadom.addClass(node, &#123;a: false, b: true,c:true&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var Adadom &#x3D; &#123;&#125;</span><br><span class="line">Adadom.getSiblings(node)</span><br><span class="line">Adadom.addClass(node, &#123;a: false, b: true,c:true&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>得到代码如下，这样做也能<strong>避免将 JS 提供的 DOM 覆盖</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-a8a36cf56f38cbee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h1 id="能不能把-node-放在前面"><a href="#能不能把-node-放在前面" class="headerlink" title="能不能把 node 放在前面"></a>能不能把 node 放在前面</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node.getSiblings()</span><br><span class="line">node.addClass()</span><br></pre></td></tr></table></figure>
+
 <p>方法一：扩展 Node 接口</p>
 <p>直接在 Node.prototype 上加函数</p>
 <p>Node 如何取到 item3？用 this ，why？把上面写成 .call 的形式，因为  <strong>this 是 call 的第一个参数。</strong>那么用 this 就显而易见了</p>
@@ -225,15 +228,18 @@
 <p>但是这样太乱了，总不能所有人都在 Node 原型上加属性吧？所以有了方法 2</p>
 <p>方法二：新的接口 BetterNode</p>
 <p>示例如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Node2(node)&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        element: node,</span><br><span class="line">        getSiblings: function()&#123;</span><br><span class="line">       &#125;,</span><br><span class="line">      addClass: function()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let node =document.getElementById(&apos;x&apos;)</span><br><span class="line">let node2 = Node2(node)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Node2(node)&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        element: node,</span><br><span class="line">        getSiblings: function()&#123;</span><br><span class="line">       &#125;,</span><br><span class="line">      addClass: function()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let node &#x3D;document.getElementById(&#39;x&#39;)</span><br><span class="line">let node2 &#x3D; Node2(node)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass()</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-9eb49bb5f7b83c3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>这种方法叫做「无侵入」即对 Node 无侵入</p>
-<h1 id="把-Node2-改成-jQuery-吧"><a href="#把-Node2-改成-jQuery-吧" class="headerlink" title="把 Node2 改成 jQuery 吧"></a>把 Node2 改成 jQuery 吧</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function jQuery(node)&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        element: node,</span><br><span class="line">        getSiblings: function()&#123;</span><br><span class="line">        &#125;,</span><br><span class="line">        addClass: function()&#123;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">let node =document.getElementById(&apos;x&apos;)</span><br><span class="line">let node2 =jQuery(node)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass()</span><br></pre></td></tr></table></figure>
-<h1 id="再给个缩写吧-alias"><a href="#再给个缩写吧-alias" class="headerlink" title="再给个缩写吧:alias"></a>再给个缩写吧:alias</h1><p><strong>window.\$ = jQuery</strong></p>
-<p>即  <strong>var node2 = \$(node)</strong></p>
+<h1 id="把-Node2-改成-jQuery-吧"><a href="#把-Node2-改成-jQuery-吧" class="headerlink" title="把 Node2 改成 jQuery 吧"></a>把 Node2 改成 jQuery 吧</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function jQuery(node)&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        element: node,</span><br><span class="line">        getSiblings: function()&#123;</span><br><span class="line">        &#125;,</span><br><span class="line">        addClass: function()&#123;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">let node &#x3D;document.getElementById(&#39;x&#39;)</span><br><span class="line">let node2 &#x3D;jQuery(node)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass()</span><br></pre></td></tr></table></figure>
+
+<h1 id="再给个缩写吧-alias"><a href="#再给个缩写吧-alias" class="headerlink" title="再给个缩写吧:alias"></a>再给个缩写吧:alias</h1><p><strong>window.$ = jQuery</strong></p>
+<p>即  <strong>var node2 = $(node)</strong></p>
 <p>但是为了防止记混 node2 到底有没有引入 jQuery</p>
 <p>大家通常这样写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var $node2 = $(node)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var $node2 &#x3D; $(node)</span><br></pre></td></tr></table></figure>
+
 <p>至此，你已经知道 jQuery 是个什么了：它就是一个函数，是 JS 原始 DOM 的扩展，便于我们更好得使用 JS 写代码的加强版 DOM API。</p>
 <p>完整代码见  <a href="https://github.com/Adashuai5/jQuery-demo/tree/master/jQuery%20API">github</a></p>
 <hr>
@@ -252,13 +258,13 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/07/29/实现一个-jQuery-的-API/">https://github.com/Adashuai5/Adashuai5.github.io/2018/07/29/实现一个-jQuery-的-API/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2018/07/29/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA-jQuery-%E7%9A%84-API/">https://github.com/Adashuai5/Adashuai5.github.io/2018/07/29/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA-jQuery-%E7%9A%84-API/</a></span>
                     </p>
                 
                 
                     <p class="copyright-item">
                         <span>License:</span>
-                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
                     </p>
                 
                 
@@ -289,10 +295,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2018/08/11/理解JSONP-上/">理解 JSONP 上</a>
+                <a class="prev" rel="prev" href="/2018/08/11/%E7%90%86%E8%A7%A3JSONP-%E4%B8%8A/">理解 JSONP 上</a>
             
             
-            <a class="next" rel="next" href="/2018/07/16/恢复github上不显示的绿块/">恢复 github 上不显示的绿块</a>
+            <a class="next" rel="next" href="/2018/07/16/%E6%81%A2%E5%A4%8Dgithub%E4%B8%8A%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E7%BB%BF%E5%9D%97/">恢复 github 上不显示的绿块</a>
             
         </section>
 

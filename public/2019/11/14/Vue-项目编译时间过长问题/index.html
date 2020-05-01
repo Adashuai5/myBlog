@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="author" content="Zhou Yuanda">
@@ -48,7 +49,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -194,10 +195,13 @@
         <div class="post-content">
             <p>随着公司项目不断增大，项目打包编译的时长也不断增加，尤其是在公司使用 jenkins 自动化部署以后更甚。由此我想到此问题可能是引入依赖过多而造成。通过 google 查看分析，终于找到相关问题并初步实践，方法如下：</p>
 <h1 id="1-使用-webpack-bundle-analyzer-分析项目外部依赖大小"><a href="#1-使用-webpack-bundle-analyzer-分析项目外部依赖大小" class="headerlink" title="1. 使用 webpack-bundle-analyzer 分析项目外部依赖大小"></a>1. 使用 <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer">webpack-bundle-analyzer</a> 分析项目外部依赖大小</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># NPM</span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line"># Yarn</span><br><span class="line">yarn add -D webpack-bundle-analyzer</span><br></pre></td></tr></table></figure>
+
 <p>官网显示的使用方法，需要在 webpack.config.js 内配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const BundleAnalyzerPlugin = require(&apos;webpack-bundle-analyzer&apos;).BundleAnalyzerPlugin;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    new BundleAnalyzerPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const BundleAnalyzerPlugin &#x3D; require(&#39;webpack-bundle-analyzer&#39;).BundleAnalyzerPlugin;</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    new BundleAnalyzerPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>而我们的项目是使用 vue-cli3 搭建，其内置 webpack （也就是没有 webpack.config.js），因此我们找到 vue.config.js 使用如下代码引入插件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    //*//</span><br><span class="line">    config</span><br><span class="line">      .plugin(&apos;webpack-bundle-analyzer&apos;)</span><br><span class="line">      .use(require(&apos;webpack-bundle-analyzer&apos;).BundleAnalyzerPlugin)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; vue.config.js</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    &#x2F;&#x2F;*&#x2F;&#x2F;</span><br><span class="line">    config</span><br><span class="line">      .plugin(&#39;webpack-bundle-analyzer&#39;)</span><br><span class="line">      .use(require(&#39;webpack-bundle-analyzer&#39;).BundleAnalyzerPlugin)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>此时运行 yarn serve 会执行 webpack-bundle-analyzer 插件 BundleAnalyzerPlugin 的默认功能</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-ab4bc9a1e287601a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>serve 完成，会在浏览器自动生成依赖大小分析的可视化网站，如下图所示</p>
@@ -207,11 +211,14 @@
 </blockquote>
 <h2 id="使用前打包时间"><a href="#使用前打包时间" class="headerlink" title="使用前打包时间"></a>使用前打包时间</h2><p><img src="https://upload-images.jianshu.io/upload_images/7094266-db8c24d4609bb95c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>使用 externals 过滤我们希望通过 cdn 引入的依赖，同样在 vue.config.js 配置：<br>（注意所需依赖的别名）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    //*//</span><br><span class="line">    config.externals(&#123;</span><br><span class="line">      &apos;axios&apos;: &apos;axios&apos;,</span><br><span class="line">      &apos;vue&apos;: &apos;Vue&apos;,</span><br><span class="line">      &apos;vue-router&apos;: &apos;VueRouter&apos;,</span><br><span class="line">      &apos;vuex&apos;: &apos;Vuex&apos;,</span><br><span class="line">      &apos;element-ui&apos;: &apos;ELEMENT&apos; // 注意此处要全大写且 Vue.use(ELEMENT)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; vue.config.js</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line"></span><br><span class="line">  chainWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    &#x2F;&#x2F;*&#x2F;&#x2F;</span><br><span class="line">    config.externals(&#123;</span><br><span class="line">      &#39;axios&#39;: &#39;axios&#39;,</span><br><span class="line">      &#39;vue&#39;: &#39;Vue&#39;,</span><br><span class="line">      &#39;vue-router&#39;: &#39;VueRouter&#39;,</span><br><span class="line">      &#39;vuex&#39;: &#39;Vuex&#39;,</span><br><span class="line">      &#39;element-ui&#39;: &#39;ELEMENT&#39; &#x2F;&#x2F; 注意此处要全大写且 Vue.use(ELEMENT)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>而后在项目 index.html 文件内引入对应 cdn</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- public/index.html --&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/vuex/3.1.1/vuex.min.js&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/element-ui/2.3.3/index.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- public&#x2F;index.html --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;vue&#x2F;2.6.10&#x2F;vue.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;vue-router&#x2F;3.1.3&#x2F;vue-router.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;axios&#x2F;0.19.0-beta.1&#x2F;axios.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;vuex&#x2F;3.1.1&#x2F;vuex.min.js&quot;&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;element-ui&#x2F;2.3.3&#x2F;index.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
 <p>需要将原来的引用注释，我们的过滤才能生效</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import Vue from "vue"</span></span><br><span class="line"><span class="comment">// import Element from "element-ui"</span></span><br></pre></td></tr></table></figure>
+
 <p>再次使用 webpack-bundle-analyzer，可以看到依赖的体积减少了近 10 M</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-8519d5ef027b6035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h2 id="使用后打包时间"><a href="#使用后打包时间" class="headerlink" title="使用后打包时间"></a>使用后打包时间</h2><p>再次打包，打包时间缩短了近一倍</p>
@@ -233,13 +240,13 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-项目编译时间过长问题/">https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-项目编译时间过长问题/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF%E9%97%AE%E9%A2%98/">https://github.com/Adashuai5/Adashuai5.github.io/2019/11/14/Vue-%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF%E9%97%AE%E9%A2%98/</a></span>
                     </p>
                 
                 
                     <p class="copyright-item">
                         <span>License:</span>
-                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
                     </p>
                 
                 
@@ -270,10 +277,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/04/04/hash-模式和-history-模式小记/">【前端路由】这可能是最容易理解的一篇了</a>
+                <a class="prev" rel="prev" href="/2020/04/04/hash-%E6%A8%A1%E5%BC%8F%E5%92%8C-history-%E6%A8%A1%E5%BC%8F%E5%B0%8F%E8%AE%B0/">【前端路由】这可能是最容易理解的一篇了</a>
             
             
-            <a class="next" rel="next" href="/2019/06/12/Flutter-踩坑之环境搭建/">Flutter 踩坑之环境搭建</a>
+            <a class="next" rel="next" href="/2019/06/12/Flutter-%E8%B8%A9%E5%9D%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Flutter 踩坑之环境搭建</a>
             
         </section>
 

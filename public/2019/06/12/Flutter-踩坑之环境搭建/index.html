@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="author" content="Zhou Yuanda">
@@ -48,7 +49,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -197,8 +198,10 @@
 <p>在 <a href="https://github.com/flutter/flutter/issues/16025#">✗ Android license status unknown.</a> issue 内找到答案</p>
 <h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><p>在下方路径内找到 sdkmanager.bat 文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\Android\Sdk\tools\bin</span><br></pre></td></tr></table></figure>
+
 <p>在以下区域加入如 17 行所示 set JAVA_HOME=”xxx\Android Studio\jre”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">16 @rem Add default JVM options here. You can also use JAVA_OPTS and SDKMANAGER_OPTS to pass JVM options to this script.</span><br><span class="line">+17 set JAVA_HOME=&quot;F:\ada\Android Studio\jre&quot; // 你的 Android Studio\jre 路径</span><br><span class="line">18 set DEFAULT_JVM_OPTS=&quot;-Dcom.android.sdklib.toolsdir=%~dp0\..&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">16 @rem Add default JVM options here. You can also use JAVA_OPTS and SDKMANAGER_OPTS to pass JVM options to this script.</span><br><span class="line">+17 set JAVA_HOME&#x3D;&quot;F:\ada\Android Studio\jre&quot; &#x2F;&#x2F; 你的 Android Studio\jre 路径</span><br><span class="line">18 set DEFAULT_JVM_OPTS&#x3D;&quot;-Dcom.android.sdklib.toolsdir&#x3D;%~dp0\..&quot;</span><br></pre></td></tr></table></figure>
+
 <p>再运行 flutter doctor</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7094266-49d92a6402463517.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>根据提示运行 flutter doctor –android-licenses<br>然后一直 y 就可以了</p>
@@ -218,13 +221,13 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2019/06/12/Flutter-踩坑之环境搭建/">https://github.com/Adashuai5/Adashuai5.github.io/2019/06/12/Flutter-踩坑之环境搭建/</a></span>
+                        <span><a href="https://github.com/Adashuai5/Adashuai5.github.io/2019/06/12/Flutter-%E8%B8%A9%E5%9D%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://github.com/Adashuai5/Adashuai5.github.io/2019/06/12/Flutter-%E8%B8%A9%E5%9D%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></span>
                     </p>
                 
                 
                     <p class="copyright-item">
                         <span>License:</span>
-                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
                     </p>
                 
                 
@@ -255,10 +258,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/14/Vue-项目编译时间过长问题/">Vue 项目编译时间过长问题</a>
+                <a class="prev" rel="prev" href="/2019/11/14/Vue-%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4%E8%BF%87%E9%95%BF%E9%97%AE%E9%A2%98/">Vue 项目编译时间过长问题</a>
             
             
-            <a class="next" rel="next" href="/2019/05/06/7个实用的-JavaScript-小技巧（译文）/">7 个实用的 JavaScript 小技巧（译文）</a>
+            <a class="next" rel="next" href="/2019/05/06/7%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84-JavaScript-%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%88%E8%AF%91%E6%96%87%EF%BC%89/">7 个实用的 JavaScript 小技巧（译文）</a>
             
         </section>
 
