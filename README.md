@@ -1,3 +1,5 @@
-# myBlog 用于保存我的个人博客主页所有源码
-访问 [Ada 的个人博客主页](https://adashuai5.github.io/index.html)
-这里记录我的一些心得，由于是初学者，文章内容质量可能并不丰富和深入，当然主要是给自己看。
+# myBlog to keep all the source code for my personal blog home page.
+
+Here's a record of what I've learned, a record of learning, something I hope to leave for myself as I get older, and something that will exercise my writing skills.
+
+If you're interested, you can visit [Ada's personal blog page](https://adashuai5. github.io/index.html)

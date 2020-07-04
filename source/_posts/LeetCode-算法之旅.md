@@ -209,5 +209,36 @@ var removeDuplicates = function (nums) {
     return nums.length
 }
 ```
----
-2020-05-01 更新
+
+## [32\. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)
+
+```
+function longestValidParentheses(s: string): number {
+  const stack = [-1]
+  let maxLength = 0
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(') {
+      stack.push(i)
+      console.log(stack,'1',i,maxLength)
+      continue;
+    }
+    stack.pop()
+      console.log(stack,'2',i,maxLength)
+
+    if (stack.length === 0) {
+      console.log(stack,'3',i,maxLength)
+      stack.push(i)
+    } else {
+      maxLength = Math.max(maxLength, i - stack[stack.length - 1])
+      console.log(stack,'4',i,maxLength)
+    }
+  }
+  return maxLength
+};
+```
+
+此题需要考虑 '((()))' 也符合要求
+
+![思路](https://upload-images.jianshu.io/upload_images/7094266-1efae228cc6d2e75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+2020-07-04 更新
