@@ -10,7 +10,7 @@ JavaScript 中除了基础类型外的数据类型，都是对象（引用类型
 
 > 每个实例对象（ object ）都有一个私有属性（称之为 **proto** ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( **proto** ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
-![](https://upload-images.jianshu.io/upload_images/7094266-2e79d6fbb9c205e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-c9e28000b43ca445.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 上面是 [MDN 里有关原型链知识](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) 的摘录，什么意思？让我们来解释一下
 
@@ -22,7 +22,7 @@ JavaScript 中除了基础类型外的数据类型，都是对象（引用类型
 
 var n = new Number() 创建一个 Number 函数，其是一个对象
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-62536de6cd21ab12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-62536de6cd21ab12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 这里的 n 就是 Number 的实例对象，可以看到 n 里面有一个 **proto** 指向 Number 所指向的原型对象（也是 n 自己本身的原型对象），Number 为 n 的构造函数，它通过 prototype 指向自己的原型对象，而后又可以通过 constructor 指向回 Number 本身；
 
@@ -76,7 +76,7 @@ Number 的构造函数是 Function，即 Number 是 Function 的实例
 
 **Function.**proto** === Function.prototype**
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-b6a6447f260e8db4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-b6a6447f260e8db4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 

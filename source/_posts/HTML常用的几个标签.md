@@ -18,7 +18,7 @@ tags: HTML
 
 ![](https://upload-images.jianshu.io/upload_images/7094266-1031b6812b8aaf57.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-fa67255c8a244a71.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-fa67255c8a244a71.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 1.2.**iframe 标签**的  **src** 属性：主要用来加链接
 

@@ -3,6 +3,7 @@ title: 【经验总结】vue + element-ui 踩坑—— table 篇
 date: 2020-05-01 20:52:15
 tags: 设计模式
 ---
+
 工作一年，主要职责是负责公司后台管理平台的开发与维护。此间面对各种业务需求，通过面向谷歌编程等常见方式，积累了一些微不足道的经验。
 
 本篇为总结的第一篇（也许有其他篇）—— table 篇
@@ -168,7 +169,7 @@ tableData: [
 </el-table>
 ```
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-f61e03deca5b00a3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-f61e03deca5b00a3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 可以看到，仅仅是这十来个字段，就让页面显得非常臃肿，而且很多重复，可想而知如果字段增致几十上百，展示方式更加繁琐，开发维护不易。
 
@@ -178,7 +179,7 @@ tableData: [
 
 demo 代码的目录结构
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-42cc6104f08880a9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-42cc6104f08880a9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### tableData.js
 
@@ -494,7 +495,7 @@ export default {
           return;
         } else {
           this.TABLE_DATA_MAP.tableDemo.forEach(keyObject => {
-            if (keyObject.key.includes(column.property)) {
+            if (keyObject.key === column.property) {
               if (keyObject.isPercent && keyObject.isPercent === true) {
                 sums[index] = this.toPercent(
                   this.totalData[keyObject.molecule],
@@ -522,7 +523,7 @@ export default {
 </script>
 ```
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-c3386d88c026e3bc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-c3386d88c026e3bc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 动态列表配置
 
@@ -531,7 +532,7 @@ export default {
 
 更新的目录结构:
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-a05f793f66c49d15?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-a05f793f66c49d15?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Table.vue
 
@@ -741,9 +742,9 @@ export default new Vuex.Store({
 })
 ```
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-9f63140d164667ab?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-9f63140d164667ab?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-d4872f06ee2b2150?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-d4872f06ee2b2150?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 思路十分简单，本质就是在后端保存一份当前页面用户表格的私人定制 `TABLE_DATA_MAP` 文件。
 
@@ -872,47 +873,3 @@ export function export_json_to_excel(th, keyArray, jsonData, defaultTitle) {
 ```
 
 Export2Excel.js 网上有很多版本，大同小异。我对其 `export_json_to_excel` 函数作了封装，Export2Excel.js 里面也有通过 DOM 导出的方法，但使用时会崩溃，因此通过 DOM 导出推荐 2.1 方法
-
-又得益于我们之前的 `TABLE_DATA_MAP` 文件，2.2 方法导出基本没有工作量的问题，节省了很大时间（相信看到这里，你能够体会到表驱动法对 table 的意义）
-
-```
-doExport2Excel() {
-  const tHeader = ["ID"];
-  const keyArray = ["id"];
-  this.TABLE_DATA_MAP.tableDemo.forEach(item => {
-    tHeader.push(item.label);
-    keyArray.push(item.key);
-  });
-  // 这里 jsonData 应该是所要导出的所有数据，可让后端传值
-  const jsonData = this.tableData;
-  jsonData.forEach(list => {
-    this.TABLE_DATA_MAP.tableDemo.forEach(keyObject => {
-      if (keyObject.isPercent && keyObject.isPercent === true) {
-        list[keyObject.key] = this.toPercent(
-          list[keyObject.molecule],
-          list[keyObject.denominator]
-        );
-      } else if (keyObject.isFixedTwo && keyObject.isFixedTwo === true) {
-        list[keyObject.key] = this.toFixedTwo(
-          list[keyObject.molecule],
-          list[keyObject.denominator]
-        );
-      }
-    });
-  });
-  export_json_to_excel(tHeader, keyArray, jsonData, "数据导出");
-},
-```
-
-这种方法比 2.1 好在：很多时候导出的 table 列与展示的是不一致的（如通过列表配置，展示字段少于导出字段情况），我们甚至可以在导出时对某些字段作不同于页面展示的数据处理。
-
-与此同时其解决了后端导出数据会与展示数据不一致的问题，在主动性和灵活性上更胜一筹。
-
----
-花了快一天时间写 demo + 整理，暂时先写这么多
-
-不定时更新。。。
-
-以上完整代码看 [这里](https://github.com/Adashuai5/vue-element-plus)
-
-整理不易，别忘了点个赞😄！

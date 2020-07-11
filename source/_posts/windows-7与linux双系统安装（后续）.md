@@ -10,11 +10,11 @@ tags: linux
 
 首先是各种无法启动
 
-![image](http://upload-images.jianshu.io/upload_images/7094266-acbb7fb00b6400ba.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://pic1.zhimg.com/v2-da663ff0bed578613fed1f9016d3d9ac_b.jpg)
 
 于是我选择各种重装，结果悲剧了。
 
-![](http://upload-images.jianshu.io/upload_images/7094266-cfe90c6da4aba864.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://pic4.zhimg.com/v2-fcd2da3fe20cd7d25c2abeb62e8e8037_b.jpg)
 
 每次重启都是这个，崩溃
 

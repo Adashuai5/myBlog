@@ -202,14 +202,14 @@ const exitPaint = useCallback(() => {
 
 画板已经可以画画了，但是作为一个独立工具，只是能够画画是远远不够的，接下来我们为其添加功能面板：
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-1f27cc994e37b30b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-1f27cc994e37b30b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 封装 Iconfont 组件
 
 功能面板用到了很多图标，后续项目也会用到，因此我封装了一个 Iconfont 组件
 ，图标来源是 iconfont，每次我们修改或增加图标等，只需要修改 scriptElem.src 即可
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-f90cd3f40a5c4d26?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-f90cd3f40a5c4d26?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```
 // src/components/iconfont/index.tsx
@@ -330,7 +330,7 @@ const [isToolboxOpen, setToolboxOpen] = useState(true);
 
 ##### tools 面板：
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-867a1490a29a8274?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-867a1490a29a8274?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 主要用来选择是画笔还是橡皮擦：
 
@@ -400,7 +400,7 @@ if (mousePosition && newMousePosition) {
 
 ##### sizes/colors 面板：
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-4f803da20f795f2c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-4f803da20f795f2c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 colors 面板列出了几种常用颜色，增加了原生颜色选择器，可改变画笔颜色：
 
@@ -472,7 +472,7 @@ const onSizesChange = useCallback((e) => {
 
 ##### options 面板：
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-856b72c57f443e8f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-856b72c57f443e8f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 主要有保存、清空、回退及前进功能：
 
@@ -760,7 +760,7 @@ return (
 
 效果如下图：
 
-![image](https://upload-images.jianshu.io/upload_images/7094266-131d24964ff76e17?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-131d24964ff76e17?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```
 // 确认清空

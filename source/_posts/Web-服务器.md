@@ -40,13 +40,22 @@ console.log('open http://localhost:8080')
 server.listen(8080)
 ```
 
-用命令行打开 server1.js 所在目录，node 开启服务器![](https://upload-images.jianshu.io/upload_images/7094266-59e81063d440a373.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-用浏览器打开http://localhost:8080，2秒后就返回页面拉![](https://upload-images.jianshu.io/upload_images/7094266-7bf0b304614ce83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+用命令行打开 server1.js 所在目录，node 开启服务器
+
+![](https://upload-images.jianshu.io/upload_images/7094266-59e81063d440a373.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+用浏览器打开 http://localhost:8080，2秒后就返回页面拉
+
+![](https://upload-images.jianshu.io/upload_images/7094266-7bf0b304614ce83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 至此，你已经用 node.js 完成了一个简单的服务器搭建，并用浏览器以http://localhost:8080向你的服务器发起请求并成功得到响应了
 
 ### 静态服务器
 
-页面不会变化，展示静态页面![image](http://upload-images.jianshu.io/upload_images/7094266-19e00ec3472ba838.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+页面不会变化，展示静态页面
+
+![](http://upload-images.jianshu.io/upload_images/7094266-19e00ec3472ba838.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **同样用 node 尝试一个简单的静态服务器**
 
 ```
@@ -69,26 +78,40 @@ server.listen(8080)
 console.log('visit http://localhost:8080' )
 ```
 
-我在 hi 文件下新建了一个 html 文件![](https://upload-images.jianshu.io/upload_images/7094266-f1c53aa1769fd9ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+我在 hi 文件下新建了一个 html 文件
 
-命令行![](https://upload-images.jianshu.io/upload_images/7094266-9dcba127af327a67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/7094266-f1c53aa1769fd9ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-这次输入的就是http://localhost:8080/index.html![](https://upload-images.jianshu.io/upload_images/7094266-986cc0ea222a9586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)成功拉
+命令行
+
+![](https://upload-images.jianshu.io/upload_images/7094266-9dcba127af327a67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+这次输入的就是 http://localhost:8080/index.html
+
+![](https://upload-images.jianshu.io/upload_images/7094266-986cc0ea222a9586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+成功拉
 
 ### 动态服务器
 
-有个动态软件，可执行动态页面![image](http://upload-images.jianshu.io/upload_images/7094266-47d1ffd2b592f7e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+有个动态软件，可执行动态页面
+
+![](http://upload-images.jianshu.io/upload_images/7094266-47d1ffd2b592f7e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 这一部分涉及的知识就多了，无法用简单的小示例完整展现，后续应该会有相关博客
 
 ### 以上例子均为 url 同源
 
 当浏览器向服务器发送请求时，会遇到**不同源**的情况：（有关浏览器同源的详细概念可以参考[阮一峰博客](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)）
-不同源两种情况下的规避方法： 1.服务器同意请求：
-JSONP：需要后端支持（附上我学习 JSONP 的相关[博客](https://www.jianshu.com/p/2a2fe02917e7)）
-CORS(Cross-Origin Resource Sharing)：跨域资源共享（AJAX 相关[博客](https://www.jianshu.com/p/4591a66c50f5)） 2.服务器不同意请求：
+不同源两种情况下的规避方法： 
+
+1. 服务器同意请求：
+JSONP：需要后端支持（附上我学习 JSONP 的相关 [博客](https://www.jianshu.com/p/2a2fe02917e7)）
+CORS(Cross-Origin Resource Sharing)：跨域资源共享（AJAX 相关 [博客](https://www.jianshu.com/p/4591a66c50f5)） 
+
+2. 服务器不同意请求：
 利用服务器中转：自己搭建一个服务器，由于服务器访问服务器没有同源要求，可直接访问，自己服务器作为中转，把自己服务器变为情况 1，即可通过访问自己服务器再访问到其他服务器相关内容
-这方面的知识同样可以参考
-[饥人谷博客-跨域](http://book.jirengu.com/fe/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/Javascript/%E8%B7%A8%E5%9F%9F.html)
+这方面的知识同样可以参考 [饥人谷博客-跨域](http://book.jirengu.com/fe/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/Javascript/%E8%B7%A8%E5%9F%9F.html)
 
 ---
 
