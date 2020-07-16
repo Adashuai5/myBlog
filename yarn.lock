@@ -698,10 +698,25 @@ hexo-util@^1.0.0, hexo-util@^1.3.0, hexo-util@^1.4.0, hexo-util@^1.8.0:
     strip-indent "^3.0.0"
     striptags "^3.1.1"
 
-hexo-util@^2.0.0, hexo-util@^2.1.0:
+hexo-util@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/hexo-util/download/hexo-util-2.0.0.tgz?cache=0&sync_timestamp=1587952359914&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhexo-util%2Fdownload%2Fhexo-util-2.0.0.tgz#5e631b3e11d3066bbe0d870cbfa248191c339906"
   integrity sha1-XmMbPhHTBmu+DYcMv6JIGRwzmQY=
+  dependencies:
+    bluebird "^3.5.2"
+    camel-case "^4.0.0"
+    cross-spawn "^7.0.0"
+    deepmerge "^4.2.2"
+    highlight.js "^10.0.0"
+    htmlparser2 "^4.0.0"
+    prismjs "^1.17.1"
+    strip-indent "^3.0.0"
+    striptags "^3.1.1"
+
+hexo-util@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-2.1.0.tgz#2c691a034a05d4ed254696c2e99d7cb686fdd350"
+  integrity sha512-TXt6z7rj5BEDig7aZZjfHa7qFKGOtUlQoVHvQh0GS99fGp1JxWbllosI173kOcrzor/uubtGk+5nRzhELZyeZw==
   dependencies:
     bluebird "^3.5.2"
     camel-case "^4.0.0"
@@ -875,8 +890,9 @@ lazy-cache@^1.0.3:
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
 lodash@^4.17.11:
-  version "4.17.15"
-  resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 longest@^1.0.1:
   version "1.0.1"
